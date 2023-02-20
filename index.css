@@ -1,0 +1,40 @@
+* {
+    background-color: #202731;
+    color: #ccc;
+    font-family: "Cascadia Code", "JetBrains Mono", "Consolas", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 3000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container {
+    width: 400px;
+    height: 400px;
+    display: flex;
+}
+
+img {
+    transform: scale(0);
+    width: 50%;
+    height: 50%;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    margin: auto;
+    background-color: transparent;
+}
+
+img.active {
+    transform: scale(1.2, 1.2);
+    opacity: 1;
+}
