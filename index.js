@@ -1,16 +1,15 @@
+// html img element
 const logo = document.querySelector("img");
 
 let options = {}
 
-let observer = new IntersectionObserver((entries, observe) => {
-    console.log(entries);
-    console.log(observe);
-    const entry = entries[0];
-    setTimeout(() => {
-        if (entry.isIntersecting) return logo.classList.add("active");
-        return logo.classList.remove("active");
-    }, 50);
-
+// observer obj
+let observer = new IntersectionObserver((entries, /*observe*/) => {
+    const [entry] = entries;
+    if (entry.isIntersecting) {
+        return setTimeout(() => logo.classList.add("active"), 50);
+    }
+    setTimeout(() => logo.classList.remove("active");, 50);
 }, options);
 
 observer.observe(logo);
