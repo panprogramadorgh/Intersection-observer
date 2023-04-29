@@ -6,10 +6,11 @@ let options = {}
 // observer obj
 let observer = new IntersectionObserver((entries, /*observe*/) => {
     const [entry] = entries;
-    if (entry.isIntersecting) {
-        return setTimeout(() => logo.classList.add("active"), 50);
+    if (entry.isIntersecting && !logo.classList.contains('active')) {
+        setTimeout(() => logo.classList.add("active"), 50);
+    } else if (!entry.isIntersecting && logo.classList.contains('active')) {
+        setTimeout(() => logo.classList.remove("active");, 50);
     }
-    setTimeout(() => logo.classList.remove("active");, 50);
 }, options);
 
 observer.observe(logo);
